@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <iostream>
 
-#define SCREEN_WIDTH 800
-#define SCREEN_HEIGHT 700
-#define R 150
+#define SCREEN_WIDTH 1000
+#define SCREEN_HEIGHT 600
+#define R 120
 SDL_Window *win = NULL;
 SDL_Renderer *rend = NULL;
 bool gameIsRunning=false;
@@ -65,9 +65,9 @@ gameIsRunning=initializing();
 while(gameIsRunning)
 {
 	event_loop();
-    SDL_SetRenderDrawColor(rend, 0, 255, 0, 0);
+    SDL_SetRenderDrawColor(rend, 100, 150, 100, 0);
 	SDL_RenderClear(rend);
-	SDL_SetRenderDrawColor(rend, 250, 0, 0, 0);
+	SDL_SetRenderDrawColor(rend, 250, 50, 200, 0);
     draw_Circle(SCREEN_WIDTH/2,SCREEN_HEIGHT/2,R);
 	SDL_RenderPresent(rend);
 }
