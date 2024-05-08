@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include <iostream>
 
-#define SCREEN_WIDTH 800
-#define SCREEN_HEIGHT 700
-double R=0;
+#define SCREEN_WIDTH 1000
+#define SCREEN_HEIGHT 600
+double R=1;
 SDL_Window *win = NULL;
 SDL_Renderer *rend = NULL;
 bool gameIsRunning=false;
@@ -62,17 +62,17 @@ void draw_Circle( int centerX, int centerY, int radius) {
         }
     }
 }
-void Draw()
-{
+// void Draw()
+// {
 
-    SDL_SetRenderDrawColor(rend, 0, 255, 0, 0);
-	SDL_RenderClear(rend);
-    updating_radious();
-	SDL_SetRenderDrawColor(rend, 250, 0, 0, 0);
-    draw_Circle(SCREEN_WIDTH/2,SCREEN_HEIGHT/2,R);
-	SDL_RenderPresent(rend);
+//     SDL_SetRenderDrawColor(rend, 0, 255, 0, 0);
+// 	SDL_RenderClear(rend);
+//     updating_radious();
+// 	SDL_SetRenderDrawColor(rend, 250, 0, 0, 0);
+//     draw_Circle(SCREEN_WIDTH/2,SCREEN_HEIGHT/2,R);
+// 	SDL_RenderPresent(rend);
 
-}
+// }
 
 
 int main(int argc,char *argv[])
@@ -82,7 +82,12 @@ gameIsRunning=initializing();
 while(gameIsRunning)
 {
 	event_loop();
-    Draw();
+    SDL_SetRenderDrawColor(rend, 0, 255, 0, 0);
+	SDL_RenderClear(rend);
+    updating_radious();
+	SDL_SetRenderDrawColor(rend, 250, 0, 0, 0);
+    draw_Circle(SCREEN_WIDTH/2,SCREEN_HEIGHT/2,R);
+	SDL_RenderPresent(rend);
 }
 SDL_DestroyWindow(win);
 SDL_Quit();
