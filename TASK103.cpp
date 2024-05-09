@@ -4,7 +4,7 @@
 
 #define SCREEN_WIDTH 1000
 #define SCREEN_HEIGHT 600
-int R=90;
+int R=50;
 SDL_Window *win = NULL;
 SDL_Renderer *rend = NULL;
 bool gameIsRunning=false;
@@ -89,7 +89,7 @@ void draw_Circle( int centerX, int centerY, int radius) {
 void Draw()
 {
 
-    SDL_SetRenderDrawColor(rend, 100, 255, 0, 0);
+    SDL_SetRenderDrawColor(rend, 100, 130, 20, 0);
 	SDL_RenderClear(rend);
 
     update();

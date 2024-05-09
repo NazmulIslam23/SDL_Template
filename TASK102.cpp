@@ -38,7 +38,7 @@ if (!win)
 void updating_radious()
 {
 R+=2;
-if(R>=SCREEN_HEIGHT/2) R=0;
+if(R>=SCREEN_HEIGHT/2) R=1;
 }
 
 void  event_loop()
@@ -62,17 +62,7 @@ void draw_Circle( int centerX, int centerY, int radius) {
         }
     }
 }
-// void Draw()
-// {
 
-//     SDL_SetRenderDrawColor(rend, 0, 255, 0, 0);
-// 	SDL_RenderClear(rend);
-//     updating_radious();
-// 	SDL_SetRenderDrawColor(rend, 250, 0, 0, 0);
-//     draw_Circle(SCREEN_WIDTH/2,SCREEN_HEIGHT/2,R);
-// 	SDL_RenderPresent(rend);
-
-// }
 
 
 int main(int argc,char *argv[])
@@ -82,10 +72,10 @@ gameIsRunning=initializing();
 while(gameIsRunning)
 {
 	event_loop();
-    SDL_SetRenderDrawColor(rend, 150, 50, 130, 10);
+    SDL_SetRenderDrawColor(rend, 250, 100, 150, 10);
 	SDL_RenderClear(rend);
     updating_radious();
-	SDL_SetRenderDrawColor(rend, 250, 0, 0, 0);
+	SDL_SetRenderDrawColor(rend, 250, 100, 50, 0);
     draw_Circle(SCREEN_WIDTH/2,SCREEN_HEIGHT/2,R);
 	SDL_RenderPresent(rend);
 }

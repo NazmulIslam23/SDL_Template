@@ -3,8 +3,8 @@
 #include <iostream>
 
 #define SCREEN_WIDTH 1000
-#define SCREEN_HEIGHT 600
-#define R 120
+#define SCREEN_HEIGHT 700
+#define R 100
 SDL_Window *win = NULL;
 SDL_Renderer *rend = NULL;
 bool gameIsRunning=false;
@@ -21,7 +21,7 @@ return 0;
 if (!win)
     {
        std::cout<<"Error: SDL failed to open window\n"<<"SDL Error:"<<" "<<SDL_GetError()<<'\n';
-       return 0;;
+       return 0;
     }
 
 
@@ -30,7 +30,7 @@ if (!win)
     if (!rend)
     {
         std::cout<<"Error: SDL failed to create renderer\n"<<"SDL Error:"<<" "<<SDL_GetError()<<'\n';
-        return 0;;
+        return 0;
     }
 
 	return 1;
@@ -65,9 +65,9 @@ gameIsRunning=initializing();
 while(gameIsRunning)
 {
 	event_loop();
-    SDL_SetRenderDrawColor(rend, 200, 150, 110, 0);
+    SDL_SetRenderDrawColor(rend, 250, 150, 200, 0);
 	SDL_RenderClear(rend);
-	SDL_SetRenderDrawColor(rend, 250, 0, 200, 0);
+	SDL_SetRenderDrawColor(rend, 90, 150, 120, 0);
     draw_Circle(SCREEN_WIDTH/2,SCREEN_HEIGHT/2,R);
 	SDL_RenderPresent(rend);
 }
