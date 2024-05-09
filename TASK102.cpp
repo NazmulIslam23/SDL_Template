@@ -82,7 +82,7 @@ gameIsRunning=initializing();
 while(gameIsRunning)
 {
 	event_loop();
-    SDL_SetRenderDrawColor(rend, 0, 255, 0, 0);
+    SDL_SetRenderDrawColor(rend, 150, 50, 130, 10);
 	SDL_RenderClear(rend);
     updating_radious();
 	SDL_SetRenderDrawColor(rend, 250, 0, 0, 0);
